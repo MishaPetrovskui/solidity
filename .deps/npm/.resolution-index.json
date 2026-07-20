@@ -1,0 +1,10 @@
+{
+  "counter.sol": {
+    "__sources__": {
+      "counter.sol": {
+        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\ncontract CounterCalculator {\r\n    uint public count;\r\n\r\n    constructor() {\r\n        count = 0;\r\n    }\r\n\r\n    function increment() public {\r\n        count += 1;\r\n    }\r\n\r\n    function decrement() public {\r\n        require(count > 0, \"Count cannot be less than zero\");\r\n        count -= 1;\r\n    }\r\n\r\n    function add(uint value) public returns (uint) {\r\n        count += value;\r\n        return count;        \r\n    }\r\n\r\n    function subtract(uint value) public returns (uint) {\r\n        require(count >= value, \"Result cannot be less than zero\");\r\n        count -= value;\r\n        return count;\r\n    }\r\n\r\n    function multiply(uint value) public returns (uint) {\r\n        count *= value;\r\n        return count;\r\n    }\r\n    \r\n    function divide(uint value) public returns (uint) {\r\n        require(value > 0, \"Cannot divide by zero\");\r\n        count /= value;\r\n        return count;\r\n    }\r\n\r\n    function reset() public {\r\n        count = 0;\r\n    }\r\n}",
+        "file": "counter.sol"
+      }
+    }
+  }
+}
